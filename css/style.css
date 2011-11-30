@@ -1,0 +1,370 @@
+header {position:fixed; z-index:100; width:100%; background: #fff; border-bottom:1px #e9e9e9 solid;}
+.container { font-size:110%; padding-top:160px;}
+footer { height:200px; color:#E8E8E8; background:#E8E8E8 url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/footer-bg.png') no-repeat top center; 
+    border-top:1px solid #CECECE; padding-bottom:150px; }
+#summary { padding:10px 0; width:100%; z-index:20; background:#fff; -moz-transition:-moz-box-shadow 0.25s linear; -webkit-transition:-webkit-box-shadow 0.25s linear; }
+#wrapper { margin:0 auto; width:950px; }
+#main { width:940px; margin:0 auto 32px auto; }
+#searchform { background:#eee; border:1px #ddd solid; margin:0 auto; width:950px; height:80px; position:relative; }
+#searchform.has-filters { height:90px; }
+#main.sticky { margin:90px auto 32px auto; }
+#summary.sticky { position:fixed; top:0; -moz-box-shadow:0 1px 14px #151515; -webkit-box-shadow:0 1px 14px #151515; box-shadow:0 1px 14px #151515; }
+#searchform.default { height:80px; }
+#searchform.quick { height:40px; }
+#searchform.saved { height:40px; }
+#searchform.advanced { height:200px; }
+#advanced { display:none; position:absolute; top:75px; width:100%}
+#quick {display:none;}
+#saved {display:none;}
+
+.tab-search{margin:10px 20px 0 10px;float:left;color:#36c;}
+.tab-search:hover {text-decoration:underline;cursor:pointer}
+.tab-search.active-quicksearch {font-weight:bold;color:#666;}
+
+#content {position: relative;}
+
+#content h1 { width:940px; margin:0 auto; padding-top:10px; }
+#find, 
+#age-range, 
+#location, 
+#distance, 
+#sort,
+#submit,
+#physical-options, 
+#compatibility-options, 
+#advanced-options { position:absolute; }
+
+/*widths*/
+#find, 
+#age-range, 
+#physical-options, 
+#compatibility-options { width:200px; }
+#distance { width:140px; }
+#sort { width:100px; }
+#location { width:200px; }
+#submit { width:155px; }
+#advanced-options { width:440px; }
+
+/*positions*/
+#find, 
+#age-range,
+#location, 
+#sort,
+#distance { top:10px}
+#submit { bottom:0px; }
+#physical-options,
+#compatibility-options,
+#advanced-options { top:0px; }
+
+#find,
+#physical-options { left:10px; }
+
+#age-range, 
+#compatibility-options { left:230px; }
+
+#location,
+#advanced-options { left:450px; }
+#distance { left:680px; }
+#sort {left:860px;}
+
+#submit { right:10px; }
+/*tabs*/
+#tabs {width:952px;margin:2px auto; position:relative;height:20px;}
+#tabs .tab {float:left;padding:5px;color:#36c; cursor:pointer;margin-right:10px;}
+#tabs .tab:hover {text-decoration:underline;}
+#tabs .active {background:#bdbdbd; color:#fff; border-radius:5px;cursor:default;}
+#tabs .active:hover {text-decoration:none;}
+
+#tabs #save {text-align:right; padding-top:10px; font-size:75%;}
+
+
+.backdrop { position:absolute; top:0px; left:0px; width:100%; height:100%; background:#000; opacity: .0; filter:alpha(opacity=0); z-index:50; display:none; }
+.box {  position:fixed; top:200px; left:480px; width:540px; height:350px; background:#ffffff; z-index:51; padding:10px; -webkit-user-select:none; -moz-user-select:none; user-select:none; display: none;
+-moz-box-shadow:0px 3px 8px #400044444; -webkit-box-shadow:0px 3px 8px #000;  box-shadow:0px 3px 8px #000; display:none; }
+.close  { float:right; margin-right:6px; cursor:pointer; }
+.close:hover {text-decoration:underline;}
+.box .inner {position: relative; }
+
+#prev-box,
+#next-box { cursor:pointer; position:fixed; top:300px; height:75px; width:75px; display:none; z-index:55; background:url('/rolo/img/arrows.png') no-repeat; }
+#prev-box { left:200px; background-position: 0px -75px; }
+#next-box { left:700px; background-position: 0px 0px; }
+
+.box .pic, 
+.box .name, 
+.box .location,
+.box .profile, 
+.box .type,
+.box .lastonline,
+.box .ugc,
+.box .lookingfor,
+.box .photos,
+.box .videos,
+.box .seevids,
+.box .seepics,
+.box .cta {position:absolute;}
+
+/*
+.box .pic {top:0px; left: 0px;}
+.box .name {top:0px; left: 226px;}
+.box .location {top:20px; left: 226px;}
+.box .lookingfor {top:40px; left: 226px;}
+.box .ugc {top:60px; left: 226px; }
+.box .lastonline {top:80px; left: 226px; }
+.box .type {top:100px; left: 226px; }
+.box .profile {top:120px; left: 226px; }
+.box .cta {top:216px; left: 0px;}
+*/
+
+.box .pic {top:0px; left: 0px;}
+.box .name {top:0px; left: 236px; font-size:14px;}
+.box .location {top:20px; left: 236px; font-size:12px; }
+.box .lookingfor {top:40px; left: 236px; color:#666; font-size:12px; }
+.box .profile {top:60px; left: 236px;font-size:12px; line-height:15px; }
+
+.box .seepics { top:173px; left: 236px; font-size:11px; }
+.box .type {top:188px; left: 236px; font-size:11px; }
+.box .lastonline {top:202px; left: 236px; font-size:11px; }
+.box .time-ago {text-transform:lowercase;}
+
+.box .cta {top:235px; left: 236px;width:280px; margin-top:0px;}
+.box .cta a { width:140px; height:28px; float:none; }
+
+.box .ugc {top:226px; left: 0px; }
+
+.box .photos {top:221px; left:0px; }
+/*.box .photos img {margin-right:5px;width:50px;height:50px;cursor:pointer; opacity: 0.85; background:#eee; }*/
+.box .photos img {margin-right:5px;width:50px; cursor:pointer; opacity: 0.85; background:#eee; }
+
+.box .videos {top:276px; left:0px; }
+.box .videos img {margin-right:5px;height:56px;width:69px; cursor:pointer; background:#eee; background-size:69px 52px; background-position:0 6px; }
+
+
+.box .seevids { top:290px; left: 236px; font-size:11px; }
+
+.box .status {bottom:auto; right:auto; display:inline; margin: -5px 5px 0 5px; }
+.box .oneliner {font-weight:bold;}
+.box .description {}
+.box .location { }
+.distance_away { color:#666; display:inline; margin-left:10px; }
+
+
+/*form tweaks*/
+#quick-search, 
+#member-activity-options { margin-bottom:5px; column-count:2; -webkit-column-count:2; -moz-column-count:2; }
+#member-activity-options .inputs-list li:first-child{padding-top:0px;}
+
+#distance-input-widget { height:1px; width:100px; float:left; margin:10px 5px 0 10px; background:#ccc; -webkit-box-shadow:#fff 0px 1px 0px; -moz-box-shadow:#fff 0px 1px 0px; box-shadow:#fff 0px 1px 0px; }
+#distance-input-widget .ui-slider-handle { top:-10px; width:9px; border:1px solid #3366cc; background:#3366cc url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/flick/images/ui-bg_highlight-soft_25_0073ea_1x100.png') 50% 50% repeat-x; }
+#age-range-widget { height:1px; width:120px; float:left; margin:10px 5px 0 10px; background:#ccc; -webkit-box-shadow:#fff 0px 1px 0px; -moz-box-shadow:#fff 0px 1px 0px; box-shadow:#fff 0px 1px 0px; }
+#age-range-widget .ui-slider-range { background:#0073EA; }
+#min-age-input, 
+#max-age-input { width:20px; float:left; background:transparent; border:none; font-weight:bold; text-shadow:#fff 0 1px 0; }
+#age-range-widget .ui-slider-handle { top:-10px; width:9px; border:1px solid #3366cc; background:#3366cc url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/flick/images/ui-bg_highlight-soft_25_0073ea_1x100.png') 50% 50% repeat-x; }
+#searchform h2 { font-size:110%; line-height: normal; font-weight:normal; text-shadow:#fff 0px 1px 0px; margin-bottom:5px; color:#2d2d2d; }
+#advanced h2 { border-bottom:1px #ddd solid; }
+#quick-search div, 
+#search-options, 
+#member-activity-options .widget,
+.widget-link, 
+.sort-links, 
+#stat-action { text-decoration:none; cursor:pointer; color:#3366cc; margin-bottom:4px; text-shadow:#fff 0 1px 0; white-space:nowrap; }
+#quick-search div:hover, 
+#search-options:hover, 
+.sort-links:hover, 
+#stat-action:hover,
+.widget-link span:hover { text-decoration:underline; }
+.widget-link small {font-size:8px; position:relative; top:-2px; margin-left: 2px;}
+#search-options { font-size:80%; text-align:right; }
+
+
+/*
+#search-options:after{content:'  \25BC'; font-size:80%; }
+#search-options.options-active:after { content:'  \25B2'; }
+.widget-link:hover:after,
+.widget-link.selected-widget:after { content:'  \25BC'; font-size:50%; line-height:normal; }
+.widget-link::after { content:'  \25BC'; font-size:6px; line-height:normal; position:relative; top:-3px;}
+#sort-widget-link:after,
+#find-widget-link:after, 
+#location-widget-link:after { content:'\25BC'; font-size:80%; }
+
+*/
+.widget-box { display:none; background:#fff; padding:10px 10px 10px 10px; z-index:50; position:absolute; width:300px; border:1px #ccc solid; -moz-box-shadow:#000 0px 0px 20px; -webkit-box-shadow:#000 0px 0px 20px; box-shadow:#000 0px 0px 20px; }
+
+
+
+.two-col-widget { padding-bottom:10px; -webkit-column-count:2; -moz-column-count:2; column-count:2; }
+.widget-box.narrower { width:150px; }
+.widget-box.narrow { width:250px; }
+.widget-box { width:350px; }
+.widget-box.wide { width:450px; }
+.widget-box.wider { width:550px; }
+
+.widget-box .inputs-list li:first-child {padding-top:0;}
+.widget-box h3 {line-height: normal; font-size:14px;}
+
+#location-widget.widget-box  { width:270px; }
+#location-widget { top:44px; left:0px; }
+#distance-choices { display:table; margin:0 auto; }
+#distance-choices ul { list-style:none; margin:0 auto; }
+#distance-choices li { display:inline; margin:0 2px 0 2px; border-bottom:1px dotted #3B5998; color:#3B5998; cursor:pointer; padding:0 3px 0 3px}
+#distance-choices li.active-distance { border:1px solid #3079ED; color:#fff; text-align:center; width:auto; outline:0; 
+background-image:-webkit-linear-gradient(top,#4D90FE,#4787ED); background-image:-moz-linear-gradient(top,#4D90FE,#4787ED); -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; }
+#distance-from { clear:both; text-align:center; font-weight:bold; margin:5px 0; }
+#find-list ul, #location-list ul, #sort-list ul { list-style:none; margin:0; }
+#find-list li, #location-list li, #sort-list li { cursor:pointer; padding:4px; }
+#find-list li:hover, #location-list li:hover, #sort-list li:hover { color:#fff; background-image:-webkit-linear-gradient(top,#4D90FE,#4787ED); background-image:-moz-linear-gradient(top,#4D90FE,#4787ED); }
+#find-list .active-find, #location-list .active-location, #sort-list .active-sort { font-weight:bold; }
+#find-list .active-find::before, #location-list .active-location::before, #sort-list .active-sort::before { content:'\203A  '; display:inline; }
+#location-finder { border-top:1px #ddd solid; margin-top:10px; }
+.location-finder-bar { display:table; width:100%; margin:5px 0; }
+.location-finder-bar div { display:table-cell; }
+#find-your-country, #location-finder-country { font-size:75%; }
+#country-finder-ok, #location-finder-change-country { float:right; text-decoration:underline; cursor:pointer; color:#3B5998; text-align:right; font-size:75%; margin:0 5px; }
+#location-finder-done,
+#country-finder-done{ width:40px; }
+
+#location-finder-input input,
+#country-finder-input select,
+#country-finder-input button { height:25px; }
+
+#location-finder-input input, 
+#country-finder-input select { width:220px; }
+
+#sort .sort-links { margin:0 10px; }
+#sort .sort-links.active-sort { color:#333; font-weight:bold; }
+#stats { font-size:85%; }
+/*.apply-button { display:none; }*/
+.apply-button-container { height:30px; width:60px; float:right; }
+.clearer { clear:both; }
+#find-button { display:none; }
+.act-button { background-color:#4D90FE; border:1px solid #3079ED; color:#fff; background-image:-webkit-linear-gradient(top,#4D90FE,#4787ED); background-image:-moz-linear-gradient(top,#4D90FE,#4787ED); 
+cursor:pointer; font-size:90%; font-weight:bold; text-align:center; height:25px; line-height:27px; width:auto; outline:0; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; }
+.act-button:hover { background-color:#357AE8; border:1px solid #2F5BB7; background-image:-webkit-linear-gradient(top,#4D90FE,#357AE8); background-image:-moz-linear-gradient(top,#4D90FE,#357AE8); }
+.act-button:active{ -webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3); -moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.3); box-shadow:inset 0 1px 2px rgba(0,0,0,0.3)}
+#age-range .act-button {width:20px;float:left;}
+#age-range h2, #find, #distance h2, #submit, #advanced, #filters, #location h2 { -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -o-user-select:none; user-select:none; cursor:default; }
+#find-widget, #age-range, #distance, #age-range-widget .ui-slider-handle, #distance-input-widget .ui-slider-handle { cursor:pointer; } 
+#toggles-switch { position:absolute; top:0; left:0; width:10px; height:10px; background:white; }
+#toggles { position:absolute; top:10px; left:10px; background:#eee; display:none; padding:10px; }
+#toggles div { cursor:pointer; }
+#toggles div:hover { text-decoration:underline; }
+span.toggle-filter-label{text-transform:lowercase; }
+#tools{position:relative; width:950px; margin:0 auto; padding-top:10px; height:20px; }
+#filters { position:relative;width:950px; margin:0 auto;font-size:80%; padding:5px 0; border-top:none; overflow:hidden; text-overflow:clip;}
+#filters .filter-label { color:#666; margin-right:5px;white-space:nowrap;}
+#filters .filter-val,#filters .filter-toggle  { color:#333; background:url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/filter.gif') no-repeat 0px 2px; padding-left:15px; margin-right:10px; cursor:pointer; white-space:nowrap;}
+#filters .filter-val:hover, #filters .filter-toggle:hover { text-decoration:line-through; background-image:url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/cancel-filter.gif')}
+#oclip {position:absolute;right:0;}
+
+
+
+
+#results { font-size:90%; text-align:center; padding-top:20px; }
+.gut { width:55px; height:10px; float:left; }
+.result { float:left; margin-bottom:40px; font-size:90%; position:relative; }
+.result div { width:144px; }
+.pic img { height:144px; width:144px; cursor:pointer; }
+.name { font-weight:bold; }
+.name .handle { color:#3366cc; text-decoration:none; cursor:pointer; }
+.name .handle:hover { text-decoration:underline; }
+
+.status  { position:absolute; bottom:14px; right:-3px; height:24px; width:24px !important;background:url(http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/i.png) 24px 24px no-repeat; }
+.online-now  {background-position: -24px 0 }
+.broadcasting-now {background-position: 0 0 }
+.chatting-now {background-position: -48px 0 }
+
+.itrigger {position:absolute; left:134px; top: 374px; font-weight:bold;}
+.box .itrigger {display:none;}
+
+
+.cta {margin-top:10px;width:216px;}
+.cta a {text-decoration:none;color:#666;display:block; width:108px;float:left;width:90px;}
+.cta a.friend {width:120px;}
+.cta a:hover {text-decoration:none; color:#000;}
+.cta a span {height:20px ;width:20px ;background: url('/rolo/img/sprite.png') no-repeat; display:inline-block; vertical-align:middle; margin-right:4px; }
+.cta a.pressed:hover {text-decoration:none;color:#666;cursor:default;}
+
+.cta a.flirt span {background-position:-2px -26px; }
+.cta a.hotlist span {background-position:-2px -50px; }
+.cta a.friend span {background-position:-2px -74px; }
+.cta a.email span {background-position:-2px -98px; }
+
+.cta a.flirt:hover span {background-position:-26px -26px; }
+.cta a.hotlist:hover span {background-position:-26px -50px; }
+.cta a.friend:hover span {background-position:-26px -74px; }
+.cta a.email:hover span {background-position:-26px -98px; }
+
+.cta a.flirt.pressed span {background-position:-50px -26px; }
+.cta a.hotlist.pressed span{background-position:-50px -50px; }
+.cta a.friend.pressed span {background-position:-50px -74px; }
+.cta a.email.pressed span{background-position:-50px -98px; }
+
+
+#bottom { clear:both; height:32px; overflow:hidden; }
+#load-more { display:none; width:300px; margin:0 auto; }
+#loading { text-align:center; display:none; }
+#loading.abs-loader { position:fixed; top:50%; left:50%; }
+#scrollDown { clear:both; }
+.vpage-container { clear:both; width:100%; margin:0 auto 10px auto; display:table; height:10px}
+.vpage { display:none; text-align:right; border-top:2px #bbb dotted; padding-top:10px; font-size:90%; font-weight:bold; }
+
+
+.outer-zoom { position:absolute; top:-51px; left:-51px; padding:50px; width:auto !important; height:auto; z-index:30; }
+.result .zoom { width:144px; height:144px; background:#fff;  text-align:left; border:1px #cecece solid; padding:0px;box-shadow:0px 1px 2px #000;}
+.result .zoom.done {box-shadow: 0px 4px 10px #000;padding:10px}
+.zoom div { width:auto; }
+.zoom .status { top:255px; right:60px; width:24px;}
+
+
+input[type="checkbox"] { margin-top:3px; }
+.input-wrapper { position: relative;display: -moz-inline-box;display: inline-block; *display: inline; zoom: 1; margin: 4px 0;border: 1px solid #bbb; background: #fff;line-height: 18px; }
+.input-wrapper input.text,
+.input-wrapper textarea { z-index: 2;margin: 0;border: 0; background:transparent; *background: url(http://hunch.com/media/img/t.png); }
+.input-wrapper label { z-index: 1; position: absolute; height: 16px;padding: 5px 7px;font-size: 15px;line-height: 16px;color: #999;overflow: hidden; }
+.input-wrapper.focus label { color: #ccc; }
+.input-wrapper.filled label { display: none; }
+
+
+/*Variations!!!*/
+html.smallthumb .gut { width:73px; height:10px; float:left; }
+html.smallthumb .result { float:left; margin-bottom:40px; height:106px; }
+html.smallthumb .result div { /*overflow:hidden; */ width:96px; }
+html.smallthumb .result .pic img { height:96px; width:96px; }
+html.smallthumb .result .location { height:32px; }
+html.smallthumb .result .status { width:20px; bottom:6px; right:2px}
+html.smallthumb #zoom { width:auto; height:auto; background:#fff; padding:5px; z-index:9999; -moz-box-shadow:0px 6px 20px #000; -webkit-box-shadow:0px 6px 20px #000; box-shadow:0px 6px 20px #000; }
+html.smallthumb #zoom img.zoomed { width:142px; height:142px; }
+html.smallthumb #outer-zoom { position:absolute; top:-55px; left:-55px; padding:50px; width:auto; height:auto; z-index:9999; }
+html.smallthumb #outer-zoom.zoomediicon { left:-76px; }
+html.smallthumb #zoom .status { top:200px; right:52px; }
+html.smallthumb .cta span { margin:0 3px; }
+html.smallthumb .cta span img { height:18px; width:17px; padding-right:5px; cursor:pointer }
+html.smallthumb .cta .flirt img { background:url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/wink.png') no-repeat; -moz-background-size:17px 17px; background-size:17px 17px; }
+html.smallthumb .cta .email img { background:url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/mail.png') no-repeat; -moz-background-size:17px 17px; background-size:17px 17px; }
+html.smallthumb .cta .hotlist img { background:url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/hotlist.png') no-repeat; -moz-background-size:17px 17px; background-size:17px 17px; }
+html.smallthumb .cta .friend img { background:url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/friend_network.png') no-repeat; -moz-background-size:17px 17px; background-size:17px 17px; }
+html.gallery .result { margin-bottom:20px; }
+html.gallery .result div { width:160px; }
+html.gallery .result .name { display:none; }
+html.gallery .result .pic img { height:auto; width:auto; max-height:160px; max-width:160px; vertical-align:middle; }
+html.gallery .result .pic { border:1px #ddd solid; height:160px; width:160px; vertical-align:middle; display:table-cell; text-align:center; padding:6px; }
+html.gallery .gut { width:20px; }
+html.gallery .result .status { width:20px; top:auto; bottom:0px; right:0px;display:none;}
+html.gallery #zoom .status { top:auto; bottom:60px; right:52px; }
+html.gallery #zoom .pic img { max-height:none; max-width:none; }
+html.gallery #zoom .pic { border:none; height:auto; width:auto; }
+html.gallery .cta span { margin:0 3px; }
+html.gallery .cta span img { height:18px; width:17px; padding-right:5px; cursor:pointer }
+html.gallery .cta .flirt img { background:url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/wink.png') no-repeat; -moz-background-size:17px 17px; background-size:17px 17px; }
+html.gallery .cta .email img { background:url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/mail.png') no-repeat; -moz-background-size:17px 17px; background-size:17px 17px; }
+html.gallery .cta .hotlist img { background:url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/hotlist.png') no-repeat; -moz-background-size:17px 17px; background-size:17px 17px; }
+html.gallery .cta .friend img { background:url('http://graphics.pop6.com/images/graphics/rolo/beta_search_ux_testing/friend_network.png') no-repeat; -moz-background-size:17px 17px; background-size:17px 17px; }
+.ui-autocomplete { height:120px; overflow-y:scroll; overflow-x:hidden; }
+.ui-autocomplete-loading { background:white url('http://origin.pop6.com/images/graphics/rolo/beta_search_ux_testing/flick/images/ui-anim_basic_16x16.gif') right center no-repeat; }
+
+
+.ui-tooltip,.qtip{position:absolute; left:-28000px; top:-28000px; display:none; max-width:280px; min-width:50px; font-size:10.5px; line-height:12px; z-index:15000; }.ui-tooltip-fluid{display:block; visibility:hidden; position:static!important; float:left!important; }
+.ui-tooltip-content{position:relative; padding:5px 9px; overflow:hidden; border-width:1px; border-style:solid; text-align:left; word-wrap:break-word; overflow:hidden; }.ui-tooltip-titlebar{position:relative; min-height:14px; padding:5px 35px 5px 10px; overflow:hidden; border-width:1px 1px 0; border-style:solid; font-weight:bold; }.ui-tooltip-titlebar+.ui-tooltip-content{border-top-width:0!important; }
+/*!Default close button class */ .ui-tooltip-titlebar .ui-state-default{position:absolute; right:4px; top:50%; margin-top:-9px; cursor:pointer; outline:medium none; border-width:1px; border-style:solid; }* html .ui-tooltip-titlebar .ui-state-default{top:16px; }.ui-tooltip-titlebar .ui-icon,.ui-tooltip-icon .ui-icon{display:block; text-indent:-1000em; }.ui-tooltip-icon,.ui-tooltip-icon .ui-icon{-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; }.ui-tooltip-icon .ui-icon{width:18px; height:14px; text-align:center; text-indent:0; font:normal bold 10px/13px Tahoma,sans-serif; color:inherit; background:transparent none no-repeat -100em -100em; }
+/*!Default tooltip style */ .ui-tooltip-default .ui-tooltip-titlebar,.ui-tooltip-default .ui-tooltip-content{border-color:#9fa3a6; background-color:#ffffcb; color:#333; }.ui-tooltip-default .ui-tooltip-titlebar{background-color:#FFEF93; }.ui-tooltip-default .ui-tooltip-icon{border-color:#CCC; background:#F1F1F1; color:#777; }.ui-tooltip-default .ui-tooltip-titlebar .ui-state-hover{border-color:#AAA; color:#111; }.ui-tooltip .ui-tooltip-tip{margin:0 auto; overflow:hidden; background:transparent!important; border:0 dashed transparent!important; z-index:10; }.ui-tooltip .ui-tooltip-tip,.ui-tooltip .ui-tooltip-tip *{position:absolute; line-height:.1px!important; font-size:.1px!important; color:#123456; background:transparent; border:0 dashed transparent; }.ui-tooltip .ui-tooltip-tip canvas{top:0; left:0; }

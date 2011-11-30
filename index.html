@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<title>Search Prototype v04 (with Fruit)</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">		
+	<meta name="description" content="V3 of Search prototype">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/flick/jquery-ui-1.8.14.custom.css">
+    <link rel="stylesheet" href="http://dev9.friendfinder.com/css/devel/ff/english/0/fruit_basket-1322002400.css">
+</head>
+<body>
+    <header>
+    <div id="navigation">
+        <div class="page">
+            <!-- nav-bar-solved -->
+            <div>
+                <ul>
+                    <li class="nav_home"><a href="#"><span>&nbsp;</span></a></li>
+                    <li class="nav_stuff"><a href="#"><span>My Stuff</span></a>
+                        <ul>
+                            <li class="nav_my_profile first"><a href="#">My Profile</a>
+                                <ul>
+                                    <li class="first"><a href="#">Update Profile</a></li>
+                                    <li><a href="#">Profile Preferences</a></li>
+                                    <li><a href="#">Manage My Photos</a></li>
+                                    <li><a href="#">Upload a Photo</a></li>
+                                    <li><a href="#">Manage My Videos</a></li>
+                                    <li class="last"><a href="#">Upload a Video</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_my_lists"><a href="#">My Lists</a>
+                                <ul>
+                                    <li class="first"><a href="#">Hotlist</a></li>
+                                    <li><a href="#">Favorite Photos</a></li>
+                                    <li><a href="#">Favorite Videos</a></li>
+                                    <li><a href="#">My Flirts Sent</a></li>
+                                    <li><a href="#">My Flirts Received</a></li>
+                                    <li class="last"><a href="#">Who Viewed My Profile</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_my_account"><a href="#">My Account</a>
+                                <ul>
+                                    <li class="first"><a href="#">Upgrade Account</a></li>
+                                    <li class="last"><a href="#">Cupid Preferences</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_my_friends"><a href="#">My Friends</a>
+                                <ul>
+                                    <li class="first"><a href="#">View New Invites</a></li>
+                                    <li><a href="#">View Friends' Albums</a></li>
+                                    <li><a href="#">Invite More Friends</a></li>
+                                    <li class="last"><a href="#">View All My Friends</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_activities last"><a href="#">Activities</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav_find"><a href="#"><span>Search</span></a>
+                        <ul>
+                            <li class="nav_search first"><a href="#">Search</a>
+                                <ul>
+                                    <li class="first"><a href="#">Members online now</a></li>
+                                    <li><a href="#">New Matches</a></li>
+                                    <li class="nav_members_near_me"><a href="#">Members Near Me</a></li>
+                                    <li class="last"><a href="#">VIP Members</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_browse last"><a href="#">Browse</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav_popular">
+                        <a href="#"><span>What's Hot</span></a>
+                        <ul>
+                            <li class="nav_hottest_videos first"><a href="#">Hottest Videos</a></li>
+                            <li class="nav_hottest_albums"><a href="#">Hottest Albums</a></li>
+                            <li class="nav_hottest_photos"><a href="#">Hottest Photos</a></li>
+                            <li class="nav_hottest_members"><a href="#">Hottest Members</a></li>
+                            <li class="nav_adult_movies last"><a href="#">Adult Movies</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav_live">
+                        <a href="#"><span>Live Action</span></a>
+                        <ul>
+                            <li class="nav_chat first">
+                                <a href="#">Chat</a>
+                                <ul>
+                                    <li class="first"><a href="#">Interest Group Chat Rooms</a></li>
+                                    <li class="nav_im"><a href="#">Instant Messenger</a></li>
+                                    <li><a href="#">Flash Chat</a></li>
+                                    <li><a href="#">Live Model Chat</a></li>
+                                    <li><a href="#">Private Chat Room</a></li>
+                                    <li class="last"><a href="#">Download IM Software</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_video last">
+                                <a href="#">Video</a>
+                                <ul>
+                                    <li class="first"><a href="#">Live Member Webcams</a></li>
+                                    <li class="last"><a href="#">Live Model Webcams</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav_community">
+                        <a href="#"><span>Community</span></a>
+                        <ul>
+                            <li class="nav_blogs first"><a href="#">Blogs</a></li>
+                            <li class="nav_groups"><a href="#">Groups</a></li>
+                            <li class="nav_magazine"><a href="#">Magazine</a></li>
+                            <li class="nav_shop last"><a href="#">Shop</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="nav_right">
+                    <a class="btn small" href="#"><span class="icon upload dark"></span>&nbsp;Upload</a>
+                    <a class="btn small nav_im" href="#"><span class="icon messenger dark"></span>&nbsp;Instant Messenger</a>
+                </div>
+            </div>
+            <!-- .dispn -->
+        </div>
+        <!-- page -->
+    </div>
+
+    <div id="tabs">
+        <!--<div class="tab active" data-searchtab="1">Find a hookup</div>-->
+        <div class="tab inactive" data-searchtab="2">Online matches</div>
+        <div class="tab inactive" data-searchtab="3">New members</div>
+        <div class="tab inactive" data-searchtab="4">Members near me</div>
+        <div id="save">54,000 members found
+            &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a id="save-this-search" href="#">Save this search</a>
+            &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a id="my-saved-searches" href="#">My saved searches</a>
+        </div>
+    </div>
+    
+    
+    <div id="summary">
+        <div id="searchform" class="default">					
+            <div id="default"> 
+                <div id="find" class="basic-cell">
+                    <h2>Find</h2>
+                    <div id="find-widget-link" class="widget-link">
+                        <span id="find-label">women</span>
+                    </div>
+                    <div id="find-widget" class="widget-box">
+                        <div class="two-col-widget">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="2">
+                                            <span>Straight women</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="2">
+                                            <span>Lesbian women</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="2">
+                                            <span>Bi women</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="1">
+                                            <span>Straight men</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="1">
+                                            <span>Gay men</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="1">
+                                            <span>Bi men</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="3">
+                                            <span>Straight couple</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="6">
+                                            <span>Gay couple</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="5">
+                                            <span>Lesbian couple</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="4">
+                                            <span>Group</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="find" value="7">
+                                            <span>TS/TV/TG</span>
+                                            </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--
+                         <div id="find-list">
+                         <ul>
+                         <li data-findlabel="women" data-findvalue="2" class="active-find">women</li>			
+                         <li data-findlabel="men" data-findvalue="1">men</li>
+                         <li data-findlabel="couple" data-findvalue="3">couple</li>
+                         <li data-findlabel="lesbian couple" data-findvalue="5">lesbian couple</li>
+                         <li data-findlabel="gay couple" data-findvalue="6">gay couple</li>
+                         <li data-findlabel="group" data-findvalue="4">group</li>
+                         <li data-findlabel="transexual" data-findvalue="7">transexual</li>
+                         </ul>		
+                         </div>
+                         -->
+                    </div>
+                </div>
+                
+                <div id="age-range" class="basic-cell">
+                    <h2>Age</h2>
+                    <input id="min-age-input" value="24" disabled="true" />						
+                    <div id="age-range-widget" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"></div>							
+                    <input id="max-age-input" value="40" disabled="true">
+						</div>
+                
+                <div id="location" class="basic-cell">
+                    <h2>Location</h2>
+                    <div id="location-widget-link" class="widget-link"><span id="geo-label">my location</span></div>
+                    <div id="location-widget" class="widget-box">
+                        <div id="location-list">
+                            <ul>
+                                <li data-geoname="auto" class="active-location">Use my location</li>					
+                            </ul>		
+                        </div>
+                        <div id="location-finder">
+                            <div class="location-finder-bar">								
+                                <div id="location-finder-country">United States</div>
+                                <div id="location-finder-change-country">Change country</div>									
+                            </div>
+                            
+                            <div class="location-finder-bar">									
+                                <div id="location-finder-input">
+                                    <div class="input-wrapper">
+                                        <label for="geo">City or zip code</label>
+                                        <input id="geo" class="text" type="text">
+											</div>
+                                </div>
+                                <div id="location-finder-done" class="act-button">Done</div>
+                            </div>									
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div id="distance" class="basic-cell">
+                    <h2>Within <span id="distance-feedback"><span id="distance-input">50</span> miles</span></h2>
+                    <div id="distance-input-widget" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"></div>
+                </div>
+                
+                <div id="sort" class="basic-cell">
+                    <h2>Sort</h2>
+                    <div id="sort-widget-link" class="widget-link"><span id="sort-label">distance</span></div>
+                    <div id="sort-widget" class="widget-box narrower">							
+                        <div id="sort-list">
+                            <ul>
+								<li data-sortlabel="distance" class="active-sort">distance</li>			
+								<li data-sortlabel="last login">last login</li>
+								<li data-sortlabel="photos">photos</li>									
+                            </ul>		
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div id="submit">
+                    <div id="find-button" role="button" class="act-button" tabindex="0" style="-webkit-user-select: none; ">Find</div>
+                    <div id="search-options">Advanced search</div>
+                </div>
+                
+                
+            </div>
+            <div id="advanced"> 
+                <div id="physical-options">
+                    <h2>Physical Appearance</h2>							
+                    <div id="body-type-widget-link" class="widget-link" data-label="Body type"><span>Any body type</span></div>
+                    <div id="body-type-widget" class="widget-box">
+                        <h3>Body type</h3>
+                        <div class="two-col-widget">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+										<input type="checkbox" name="body_type" value="1">
+                                            <span>Average</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="body_type" value="2">
+                                            <span>Slim/Petite</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="body_type" value="3">
+                                            <span>Athletic</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="body_type" value="4">
+                                            <span>Ample</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="body_type" value="5">
+                                            <span>A little extra padding</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+										<input type="checkbox" name="body_type" value="6">
+                                            <span>Large</span>
+                                            </label>
+                                </li>
+                            </ul>	
+                        </div>
+                        <div class="apply-button-container">
+                            <button class="apply btn primary"  disabled="disabled">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <div id="race-widget-link" class="widget-link" data-label="Race"><span>Any race</span></div>
+                    <div id="race-widget" class="widget-box">
+                        <h3>Race</h3>
+                        <div class="two-col-widget">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="race" value="1">
+											<span>American Indian</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="race" value="2">
+											<span>Asian</span>
+                                            </label>
+                                </li>
+                                <li>									
+                                    <label>
+                                        <input type="checkbox" name="race" value="3">
+											<span>Black</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="race" value="4">
+											<span>Caucasian</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="race" value="5">
+											<span>East Indian</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="race" value="6">
+											<span>Hispanic</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="race" value="7">
+											<span>Middle Eastern</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="race" value="8">
+											<span>Various</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="race" value="9">
+											<span>Other</span>
+                                            </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="apply-button-container">									
+                            <button class="apply btn primary"  disabled="disabled">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <div id="eye-color-widget-link" class="widget-link" data-label="Eye color"><span>Any eye color</span></div>
+                    <div id="eye-color-widget" class="widget-box">
+                        <h3>Eye color</h3>
+                        <div class="two-col-widget">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>							
+                                        <input type="checkbox" name="eye_color" value="1">
+											<span>Black</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="eye_color" value="2">
+											<span>Brown</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="eye_color" value="3">
+											<span>Blue</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="eye_color" value="4">
+											<span>Hazel</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="eye_color" value="5">
+											<span>Green</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="eye_color" value="6">
+											<span>Gray</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="eye_color" value="7">
+											<span>Other</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="eye_color" value="8">
+											<span>Inconsistent/Variable</span>
+                                            </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="apply-button-container">
+                            <button class="apply btn primary"  disabled="disabled">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <div id="hair-type-widget-link" class="widget-link" data-label="Hair type"><span>Any hair type</span></div>
+                    <div id="hair-type-widget" class="widget-box wide">
+                        <h3>Hair color</h3>
+                        <div class="two-col-widget hair-color">
+                            <ul class="inputs-list">
+                                <li>
+                                    <div>
+                                        <input type="checkbox" name="hair_color" value="1">
+											<label>Black</label>
+                                            </div>									
+                                </li>
+                                <li>										
+                                    <div>
+                                        <input type="checkbox" name="hair_color" value="3">
+											<label>Blonde</label>
+                                            </div>
+                                </li>
+                                <li>										
+                                    <div>
+                                        <input type="checkbox" name="hair_color" value="2">
+											<label>Brown</label>
+                                            </div>
+                                </li>
+                                <li>										
+                                    <div>
+                                        <input type="checkbox" name="hair_color" value="6">
+											<label>Gray</label>
+                                            </div>
+                                </li>
+                                <li>										
+                                    <div>
+                                        <input type="checkbox" name="hair_color" value="4">
+											<label>Red/Auburn</label>
+                                            </div>
+                                </li>
+                                <li>										
+                                    <div>
+                                        <input type="checkbox" name="hair_color" value="9">
+											<label>Salt and Pepper</label>
+                                            </div>
+                                </li>
+                                <li>										
+                                    <div>
+                                        <input type="checkbox" name="hair_color" value="5">
+											<label>White</label>
+                                            </div>
+                                </li>
+                                <li>										
+                                    <div>
+                                        <input type="checkbox" name="hair_color" value="11">
+											<label>Blue/Green/Pink/Other</label>
+                                            </div>
+                                </li>
+                            </ul>									
+                        </div>
+                        
+                        <h3>Hair length</h3>
+                        <div class="two-col-widget hair-length">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="hair_length" value="1">
+											<span>Long</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="hair_length" value="2">
+											<span>Medium</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="hair_length" value="3">
+											<span>Short</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="hair_length" value="4">
+											<span>Crewcut</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="hair_length" value="5">
+											<span>Shaved</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="hair_length" value="6">
+											<span>Receding</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="hair_length" value="7">
+											<span>Bald</span>
+                                            </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="apply-button-container">								
+                            <button class="apply btn primary" disabled="disabled">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <div id="bra-size-widget-link" class="widget-link" data-label="Bra size"><span>Any bra size</span></div>
+                    <div id="bra-size-widget" class="widget-box">
+                        <h3>Bra size</h3>
+                        <div class="two-col-widget">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="brasize" value="1">
+											<span>Flat</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="brasize" value="2">
+											<span>Small</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="brasize" value="3">
+											<span>Medium</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="brasize" value="4">
+											<span>Large</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="brasize" value="5">
+											<span>Extra large</span>
+                                            </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="apply-button-container">
+                            <button class="apply btn primary" disabled="disabled">Apply</button>
+                        </div>
+                    </div> 							
+                </div>
+                
+                <div id="compatibility-options">
+                    <h2>Compatibility Preferences</h2>
+                    
+                    <div id="interest-widget-link" class="widget-link" data-label="Interests"><span>Any interests</span></div>
+                    <div id="interest-widget" class="widget-box wider">
+                        <h3>Interested in</h3>
+                        <div class="two-col-widget">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="looking_for_what" value="01">
+											<span>Erotic chat/Email/Phone fantasies</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="looking_for_what" value="02">
+											<span>Discreet relationships</span>
+                                            </label>									
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="looking_for_what" value="03">
+											<span>1-on-1 sex</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="looking_for_what" value="04">
+											<span>Bondage and discipline</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="looking_for_what" value="05">
+											<span>Cross dressing</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="looking_for_what" value="06">
+											<span>Miscellaneous fetishes</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="looking_for_what" value="07">
+											<span>Exhibitionism &amp; voyeurism</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="looking_for_what" value="08">
+											<span>Sadism &amp; masochism</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="looking_for_what" value="10">
+											<span>Other "alternative" activities</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="looking_for_what" value="11">
+											<span>Group sex (3 or more)</span>
+                                            </label>
+                                </li>
+                            </ul>								
+                        </div>
+                        
+                        <div class="apply-button-container">
+                            <button class="apply btn primary" disabled="disabled">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <div id="orientation-widget-link" class="widget-link" data-label="Sexual orientation"><span>Any sexual orientation</span></div>
+                    <div id="orientation-widget" class="widget-box">
+                        <h3>Sexual orientation</h3>
+                        <div class="two-col-widget">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="sex_orient" value="1">
+											<span>Straight</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="sex_orient" value="2">
+											<span>Bi-sexual</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="sex_orient" value="3">
+											<span>Bi-curious</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="sex_orient" value="4">
+											<span>Gay</span>
+                                            </label>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="apply-button-container">
+                            <button class="apply btn primary" disabled="disabled">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <div id="languages-spoken-widget-link" class="widget-link" data-label="Languages spoken"><span>Any languages spoken</span></div>
+                    <div id="languages-spoken-widget" class="widget-box wide">
+                        <h3>Languages spoken</h3>
+                        <div class="two-col-widget">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="Cantonese">
+											<span>Chinese (Cantonese)</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="Mandarin">
+											<span>Chinese (Mandarin)</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="Dutch">
+											<span>Dutch</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="English">
+											<span>English</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="French">
+											<span>French</span>
+                                            </label>
+                                </li>
+                                <li>			
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="German">
+											<span>German</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="Italian">
+											<span>Italian</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="Japanese">
+											<span>Japanese</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="Korean">
+											<span>Korean</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="Portuguese">
+											<span>Portuguese</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="Spanish">
+											<span>Spanish</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="Swedish">
+											<span>Swedish</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" name="lang_spoken" value="Tagalog">
+											<span>Tagalog</span>
+                                            </label>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="apply-button-container">
+                            <button class="apply btn primary" disabled="disabled">Apply</button>
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="marital-status-widget-link" class="widget-link" data-span="Marital status"><span>Any marital status</span></div>
+                    <div id="marital-status-widget" class="widget-box">
+                        <h3>Marital status</h3>
+                        <div class="two-col-widget">
+                            <ul class="inputs-list">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="marital-status-single" name="marital" value="1">
+											<span>Single</span>
+                                            </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" id="marital-status-married" name="marital" value="2">
+											<span>Married</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" id="marital-status-divorced" name="marital" value="3">
+											<span>Divorced</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" id="marital-status-separated" name="marital" value="4">
+											<span>Separated</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" id="marital-status-attached" name="marital" value="5">
+											<span>Attached</span>
+                                            </label>
+                                </li>
+                                <li>										
+                                    <label>
+                                        <input type="checkbox" id="marital-status-widowed" name="marital" value="6">
+											<span>Widowed</span>
+                                            </label>
+                                </li>
+                            </ul>
+                        </div>								
+                        <div class="apply-button-container">
+                            <button class="apply btn primary" disabled="disabled">Apply</button>
+                        </div>							
+                    </div>							
+                </div>						
+                
+                <div id="advanced-options">							
+                    <h2>Member Activities</h2>							
+                    <div id="member-activity-options">
+                        <ul class="inputs-list">
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="online_now" id="online_now">
+										<span>Online now</span>
+                                        </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" name="verified_member" id="verified_member">
+										<span>Verified member</span>
+                                        </label>
+                            </li>
+                            <li>									
+                                <label>
+                                    <input type="checkbox" name="profile_photos" id="profile_photos">
+										<span>Profile photos</span>
+                                        </label>
+                            </li>
+                            <li>									
+                                <label>
+                                    <input type="checkbox" name="profile_videos" id="profile_videos">
+										<span>Profile videos</span>
+                                        </label>
+                            </li>
+                            <li>									
+                                <label>
+                                    <input type="checkbox" name="chatting_now" id="chatting_now">
+										<span>On IM chat now</span>
+                                        </label>
+                            </li>
+                            <li>									
+                                <label>
+                                    <input type="checkbox" name="broadcasting_now" id="broadcasting_now">
+										<span>Broadcasting now</span>
+                                        </label>
+                            </li>
+                            <li>									
+                                <label>
+                                    <input type="checkbox" name="new_member" id="new_member">
+										<span>New member</span>
+                                        </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>		
+            </div>					
+        </div>
+        <div id="filters"><img id="oclip" src="img/oclip.png" /></div>
+    </div> 
+    </header>
+    
+	<div class="container">
+		<div class="grid_row">
+            <div class="span12">
+					<div id="results"></div>
+					
+					<div id="bottom">
+						<div id="loading"><img src="img/ajax-loader.gif" /></div>
+						<div id="load-more" class="act-button">See more results</div>						
+					</div>
+            </div>
+		</div>		
+	</div>
+	
+	<footer></footer>
+	
+	<div class="backdrop"></div>
+	<div id="prev-box"></div>
+	<div id="next-box"></div>
+	<div class="box">
+		<div class="close">x</div>
+		<div class="inner"></div>
+	</div>
+
+	<script src="js/jquery-1.5.1.min.js"></script>
+	<script src="js/jquery-ui-1.8.14.custom.js"></script>	
+	<script src="js/jquery.ui.button.js"></script>
+	<script src="js/jquery.qtip.pack.js"></script>
+	<script src="js/auto.js"></script>
+	<script src="js/script.js"></script>
+	
+	
+</body>
+</html>
+
